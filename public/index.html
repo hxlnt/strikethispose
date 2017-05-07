@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+<meta name="viewport" content="maximum-scale=1, user-scalable=no">
+
+<head>
+    <title>Strike(this.Pose)</title>
+    <script src="https://use.fontawesome.com/cac5715983.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/dealwithit.css">
+</head>
+<body>
+        <div class="header">
+            <h1>Strike<span class="code">(this.Pose)</span></h1>
+            <p>Can you match the facial expression shown below?</p>
+        </div>
+        <div class="flex-container" id="videocontainer">
+            <div class="flex-item" id="placeholder">
+                <i class="fa fa-camera fa-3x" aria-hidden="true"></i>
+                <p>Click here to enable the webcam.</p>
+                <video id="video"></video></div>
+            <div class="flex-item" style="background-image:url('https://hxlntblob.blob.core.windows.net/strikethispose/scoha1.jpg'); transform: scaleX(-1); background-size: cover;"></div>
+            <div class="flex-caption">Use your face...</div>
+            <div class="flex-caption">...to match this face!</div>
+        </div>          
+    </div>
+    <div id="badge"> </div>
+    <div id="score"></div>
+    <div class="buttoncontainer">
+   <button id="snap">Snap photo</button>
+   </div>
+
+    <footer>
+            <p><a href="http://www.nobadmemories.com" target="new">HXLNT</a> 2017 ~ &hearts; ~ <a href="privacy.html">Privacy policy</a> ~ &hearts; ~ <a href="http://www.github.com/hxlnt/strikethispose/" target="new">Fork on GitHub</a></p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+    <script src="js/socket.io-1.4.5.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
