@@ -122,11 +122,11 @@ console.log(`yawdiff: ${yawdiff}. Score so far: ${score}`);
     console.log(`Original: ${JSON.stringify(poiTarget)}. Incoming: ${JSON.stringify(poiIncoming)}`);
     console.log(`Score: ${score}`);
 
-    if (score <= 45) { message = 'Oh dear. Not even close.' }
-    else if (score > 45 && score <= 65) { message = '*Squints* Meh, not bad!' }
+    if (score <= 45) { message = 'Not even close.' }
+    else if (score > 45 && score <= 65) { message = '*Squints* Uhh...' }
     else if (score > 65 && score <= 84) { message = 'Wow, nicely done!' }
-    else if (score > 84 && score <= 95) { message = 'Amazing! You are a face-matcher extraordinaire!' }
-    else if (score > 95) { message = 'OK, this is legitimately freaky. Nicely done.<BR>Tweet your score | Fork on GitHub' }
+    else if (score > 84 && score <= 95) { message = 'Amazing match!' }
+    else if (score > 95) { message = 'Whoa, legit.' }
 
     document.getElementById('score').innerHTML = score + '%<p class="message">' + message + '</p>';
 
