@@ -1,4 +1,4 @@
-   body {
+body {
     background-color: white;
     margin: 0;
     padding:0;
@@ -9,6 +9,7 @@
 #placeholder i {
     padding: 20%;
 }
+
 .flex-container {
   padding: 0;
   margin: 5vh 5vw;
@@ -29,6 +30,7 @@ h1 {
     font-family: 'Segoe UI', 'Verdana', sans-serif;
     text-shadow: 2px 2px lightgray;
 }
+
 .code {
     font-size: 2.75rem;
     font-family: Courier New, Courier, monospace;
@@ -69,6 +71,7 @@ div#container {
     text-align: center;
     padding: 12px;
     box-sizing: border-box;
+}
 
 .buttoncontainer {
     text-align: center;
