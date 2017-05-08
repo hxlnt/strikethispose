@@ -207,7 +207,7 @@ a {
   font-style: normal;
 }
 
-@media all and (max-width: 800px) {
+@media all and (max-width: 800px), (max-device-width: 800px) {
 .flex-container {
    flex-direction: column;
 }
