@@ -70,14 +70,14 @@ $('body').on('click', '#snap', function () {
     let video = document.getElementById('video');
     let videow = $('#video').width();
     let videoh = $('#video').height();
-    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" id="placeholder" style="overflow:hidden; display:block;"><canvas id="canvas" style="transform: scaleX(-1); padding:0;"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); transform: scaleX(-1);background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
+    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" id="placeholder" style="overflow:hidden; display:block; transform: scaleX(-1);"><canvas id="canvas" style="padding:0;"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     canvas.height = $('.flex-item').height();
     canvas.width = $('.flex-item').width();
-    let woffset = 0;
-    if (videow > parseInt(canvas.width)) { woffset = parseInt(canvas.width) - videow }
-    context.drawImage(video, woffset, 0, videow, videoh);
+    //let woffset = 0;
+    //if (videow > parseInt(canvas.width)) { woffset =  videow - parseInt(canvas.width) }
+    context.drawImage(video, 0, 0, videow, videoh);
     incomingfaceurl = canvas.toDataURL("image/jpg", 0.8);
     socket.emit('incomingface', incomingfaceurl);
     socket.emit('incomingemotion', incomingfaceurl);
@@ -89,7 +89,7 @@ $('body').on('click', '#snap', function () {
 function videoinit () {
     $('#badge').css( "opacity", "0" );
     $('#score').css( "opacity", "0" );
-    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;"><video id="video" autoplay style="transform: scaleX(-1); min-width:40vw; min-height:40vh;"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
+    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;transform: scaleX(-1);"><video id="video" autoplay style="min-width:40vw; min-height:40vh;"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     let video = document.getElementById('video');
     let videoh = $('.flex-item').height();
     let videow = $('.flex-item').width();
