@@ -89,7 +89,7 @@ $('body').on('click', '#snap', function () {
 function videoinit () {
     $('#badge').css( "opacity", "0" );
     $('#score').css( "opacity", "0" );
-    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;"><video id="video" autoplay style="transform: scaleX(-1); min-width:40vw; min-height:40vh;"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); transform: scaleX(-1);background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
+    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;"><video id="video" autoplay style="transform: scaleX(-1); min-width:40vw; min-height:40vh;"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     let video = document.getElementById('video');
     let videoh = $('.flex-item').height();
     let videow = $('.flex-item').width();
@@ -102,7 +102,7 @@ function videoinit () {
             $('.buttoncontainer').css( "display", "block" );
         });
     }
-    else { $('#videocontainer').html('<div class="flex-item" id="placeholder"><i class="fa fa-ban fa-3x" aria-hidden="true"></i><p>Sorry, this browser does not support the use of a webcam. :( Try Edge or Chrome.</p></div><div class="flex-item" style="background-image:url(https://hxlntblob.blob.core.windows.net/strikethispose/scoha1.jpg); transform: scaleX(-1); background-size: cover;"></div><div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'); }
+    else { $('#videocontainer').html('<div class="flex-item" id="placeholder"><i class="fa fa-ban fa-3x" aria-hidden="true"></i><p>Sorry, this browser does not support the use of a webcam. :( Try Edge or Chrome.</p></div><div class="flex-item" style="background-image:url(https://hxlntblob.blob.core.windows.net/strikethispose/scoha1.jpg); background-size: cover;"></div><div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'); }
 }
 
 function getScore() {
