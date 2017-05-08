@@ -75,8 +75,6 @@ $('body').on('click', '#snap', function () {
     var context = canvas.getContext('2d');
     canvas.height = $('.flex-item').height();
     canvas.width = $('.flex-item').width();
-    //let woffset = 0;
-    //if (videow > parseInt(canvas.width)) { woffset =  videow - parseInt(canvas.width) }
     context.translate(canvas.width, 0);
     context.scale(-1,1);
     context.drawImage(video, 0, 0, videow, videoh);
