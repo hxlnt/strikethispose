@@ -24,13 +24,13 @@ socket.emit('targetemotion', targetimgurl);
 // When the results are returned, store them
 socket.on('targetfaceresults', function (response) {
     if (response == '') {
-        alert('Error! Make sure your image has at least one face and is less than 4 MB.');
+        alert('Error! Make sure the second image has at least one face and is less than 4 MB.');
     }
     else { targetFace = response; }
 });
 socket.on('targetemotionresults', function (response) {
     if (response == '') {
-        alert('Error! Make sure your image has at least one face and is less than 4 MB.');
+        alert('Error! Make sure the second image has at least one face and is less than 4 MB.');
     }
     else { targetEmotion = response; }
 });
@@ -151,9 +151,9 @@ console.log(`yawdiff: ${yawdiff}. Score so far: ${score}`);
     console.log(`Score: ${score}`);
 
     if (score <= 45) { message = 'Not even close.' }
-    else if (score > 45 && score <= 65) { message = '*Squints* Hmm...' }
-    else if (score > 65 && score <= 84) { message = 'Wow, nicely done!' }
-    else if (score > 84 && score <= 95) { message = 'Amazing match!' }
+    else if (score > 45 && score <= 65) { message = 'Uhh...' }
+    else if (score > 65 && score <= 84) { message = 'Wow, nice!' }
+    else if (score > 84 && score <= 95) { message = 'Amazing!' }
     else if (score > 95) { message = 'Whoa, legit.' }
 
     document.getElementById('score').innerHTML = score + '%<p class="message">' + message + '</p>';

@@ -115,6 +115,7 @@ button {
     font-size: 18px;
     background: #66cad8;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
+    z-index: 40;
 }
 
 input:disabled{
@@ -123,11 +124,10 @@ input:disabled{
 }
 
 footer {
-    color: black;
+    color: #222222;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
-    position: fixed;
-    bottom: 10px;
-    margin: auto;
+    position: relative;
+    margin: 2rem 0;
     width: 100%;
     text-align:center;
 }
@@ -151,7 +151,7 @@ footer p{
     position: fixed;
     top: 30vh;
     left: 40vw;
-    height: 20vh;
+    height: 20vw;
     width: 20vw;
     opacity:0;
     text-align: center;
@@ -160,13 +160,14 @@ footer p{
 
 #score {
     position: fixed;
-    top: 40vh;
+    top: 30vh;
     left: 40vw;
-    height: 20vh;
+    height: 20vw;
     width: 20vw;
+    margin-top: 5vw;
     color: white;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
-    font-size: 2.5vw;
+    font-size: 2.75vw;
     opacity:0;
     text-align: center;
     z-index:30;
@@ -175,10 +176,10 @@ footer p{
 
 p.message {
     font-family: 'Segoe UI', 'Verdana', sans-serif;
-    font-size: 1rem;
+    font-size: 1.75vw;
     color: white;
     padding: 0;
-    line-height: 18px;
+    line-height: 2vw;
 }
 
 p {
@@ -205,3 +206,40 @@ a {
   font-style: normal;
 }
 
+@media all and (max-width: 800px) {
+.flex-container {
+   flex-direction: column;
+}
+.flex-item {
+  padding: 0;
+  margin: 5px;
+  width: 80vw;
+  height: 25vh;
+}
+
+.flex-caption {
+  display:none;
+}
+
+
+#badge {
+    position: fixed;
+    height: 25vw;
+    width: 25vw;
+    top: 30vh;
+    left: auto;
+    right: 5vw;
+}
+
+#score {
+    position: fixed;
+    height: 25vw;
+    left: auto;
+    right: 5vw;
+    width: 25vw;
+    top: 30vh;
+    right: 5vw;
+    margin-top: 5vw;
+}
+
+}

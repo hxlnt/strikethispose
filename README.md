@@ -25,11 +25,15 @@ You can clone this repo to your local machine and run it locally. Or, you can fo
 
 Once you have the app running, open up `js/script.js` and replace the images in `imgarray` with your own photos! That way, you can challenge your friends to make facial expressions that mimic you. Or pop stars. Or actors. Or whoever. Do note that if you want to use local paths here instead of remote links, you'll need to replace both instances of `url` in `app.js` with `path`.
 
-## Miscellany
+## // TODO
 
- - Curious about how the scoring works? Um, spoilers! The scoring takes into account your emotions as well as the position and tilt of your head. Take a look at the `getScore()` function in `js/script.js` to see how the score is calculated. Or, take a look at the console in the browser while scores roll in. You can see the four components, each of which is worth a maximum of 2 points, that make up the score.
+This app was built as a quick up-and-running prototype, and the code has some less-than-best practices :). Here are a few outstanding issues. Feel free to submit an issue/PR related to these or other issues if you're so inclined.
 
- - Notice something that's not working right? Sounds entirely possible! This is a rough demo made by yours truly in a bit of spare time. Feel free to submit issues/PRs if you're so inclined.
+ - Improve error handling
+ - Improve browser resize behavior
+ - Improve mobile phone experience
+ - Improve code readability (*e.g.,* mix of similar JQuery/not-Jquery methods is fine but hurts readability)
+ - Replace hacky things like overwriting contents of `<div>`s with Good Javascript
 
 ## More demos, please!
 
