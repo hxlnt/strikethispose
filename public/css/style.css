@@ -1,5 +1,6 @@
 body {
     background-color: white;
+    background-image: url(/img/bg.png);
     margin: 0;
     padding:0;
     width: 100%;
@@ -27,13 +28,15 @@ body {
 
 h1 {
     font-size: 2.75rem;
+    color: #222222;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
-    text-shadow: 2px 2px lightgray;
+    text-shadow: .25rem .25rem #66cad8;
 }
 
 .code {
     font-size: 2.75rem;
-    font-family: Courier New, Courier, monospace;
+    color: #222222;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .flex-item {
@@ -51,7 +54,7 @@ h1 {
 .flex-caption {
   width: 30vw;
   height: 2rem;
-  padding: 0;
+  padding: 1rem 0 0 0;
   font-size: 1rem;
   text-align: center;
 font-family: 'Segoe UI', 'Verdana', sans-serif;
@@ -67,10 +70,11 @@ div#container {
     }
 
 .header {
-    background: lightsalmon;
+    background: #80e0ee;
     text-align: center;
-    padding: 12px;
+    padding: 5vh;
     box-sizing: border-box;
+    box-shadow: 0 .5rem #66cad8;
 }
 
 .buttoncontainer {
@@ -96,8 +100,6 @@ form {
 
 
 input[type=button], input[type=submit] {
-    background-color: darkcyan;
-    color: white;
     height: 50px;
     text-decoration: bold;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
@@ -106,15 +108,12 @@ input[type=button], input[type=submit] {
     cursor: pointer;
 }
 
-p.bodytext {
-    margin: 16px 5vw;
-}
 
 button {
     height: 50px;
     padding: 8px;
     font-size: 18px;
-    text-decoration: bold;
+    background: #66cad8;
     font-family: 'Segoe UI', 'Verdana', sans-serif;
 }
 
@@ -144,11 +143,11 @@ footer p{
     font-weight: normal;
     text-decoration: inherit;
     font-size: 20vw;
-    color: darkcyan;
-    text-shadow: 2px 2px lightgray;
+    color: #e2a9e5;
+    text-shadow: .25rem .25rem #c58ac8;
 }
 
-#badge{
+#badge {
     position: fixed;
     top: 30vh;
     left: 40vw;
@@ -176,14 +175,15 @@ footer p{
 
 p.message {
     font-family: 'Segoe UI', 'Verdana', sans-serif;
-    font-size: 12px;
+    font-size: 1.5rem;
     color: white;
     padding: 0;
-    line-height: 1rem;
+    line-height: 18px;
 }
 
 p {
     font-family: 'Segoe UI', 'Verdana', sans-serif;
+    font-size: 1.5rem;
 }
 
 h2 {

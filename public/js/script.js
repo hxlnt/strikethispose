@@ -12,7 +12,7 @@ let targetEmotion = [];
 let incomingfaceurl = '';
 let incomingFace = [];
 let incomingEmotion = [];
-let score = 0;
+var score = 0;
 let yawdiff = 0;
 let rolldiff = 0;
 let neutraldiff = 0;
@@ -54,8 +54,6 @@ socket.on('incomingfaceresults', function (response) {
 // When all webcam photos are returned, get and display the score
 socket.on('incomingallresults', function () {
     getScore();
-    $('#badge').css( "opacity", "1" );
-    $('#score').css( "opacity", "1" );
 });
 
 // When gray square is clicked, initialize video
@@ -71,34 +69,38 @@ $('body').on('click', '#retry', function(){
 $('body').on('click', '#snap', function () {
     let video = document.getElementById('video');
     let videow = $('#video').width();
+    let videoh = $('#video').height();
     document.getElementById('videocontainer').innerHTML = '<div class="flex-item" id="placeholder" style="overflow:hidden; display:block;"><canvas id="canvas" style="transform: scaleX(-1); padding:0;"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); transform: scaleX(-1);background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     canvas.height = $('.flex-item').height();
     canvas.width = $('.flex-item').width();
-    let offset = parseInt(canvas.width) - parseInt(videow);
-    context.drawImage(video, offset, 0);
-    incomingfaceurl = canvas.toDataURL("image/jpg", 0.7);
+    context.drawImage(video, 0, 0, videow, videoh);
+    incomingfaceurl = canvas.toDataURL("image/jpg", 0.8);
     socket.emit('incomingface', incomingfaceurl);
     socket.emit('incomingemotion', incomingfaceurl);
+    document.getElementById('score').innerHTML = '<p class="message">Calculating...</p>';
+    $('#badge').css( "opacity", "1" );
+    $('#score').css( "opacity", "1" );
 });
 
 function videoinit () {
     $('#badge').css( "opacity", "0" );
     $('#score').css( "opacity", "0" );
-    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;"><video id="video" autoplay style="transform: scaleX(-1);"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); transform: scaleX(-1);background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
+    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden;display:block;"><video id="video" autoplay style="transform: scaleX(-1); width:40vw;"></video><canvas id="canvas"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); transform: scaleX(-1);background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     let video = document.getElementById('video');
     let videoh = $('.flex-item').height();
     let videow = $('.flex-item').width();
     
     // Get access to the camera
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-        navigator.mediaDevices.getUserMedia({ video: true, height: {max: videoh}, width: {min: videow} }).then(function (stream) {
+        navigator.mediaDevices.getUserMedia({ video: true, height: {min: videoh}}).then(function (stream) {
             video.src = window.URL.createObjectURL(stream);
             video.play();
             $('.buttoncontainer').css( "display", "block" );
         });
     }
+    else { $('#videocontainer').html('<div class="flex-item" id="placeholder"><i class="fa fa-ban fa-3x" aria-hidden="true"></i><p>Sorry, this browser does not support the use of a webcam. :( Try Edge or Chrome.</p></div><div class="flex-item" style="background-image:url(https://hxlntblob.blob.core.windows.net/strikethispose/scoha1.jpg); transform: scaleX(-1); background-size: cover;"></div><div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'); }
 }
 
 function getScore() {

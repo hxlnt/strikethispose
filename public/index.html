@@ -9,21 +9,22 @@
 </head>
 <body>
         <div class="header">
-            <h1>Strike<span class="code">(this.Pose)</span></h1>
-            <p>Can you match the facial expression shown below?</p>
+            <h1>Strike<span class="code">(this.Pose)</span> { @OSCON }</h1>
+            <p>Can you match the facial expressions of this intrepid dev?</p>
         </div>
         <div class="flex-container" id="videocontainer">
             <div class="flex-item" id="placeholder">
                 <i class="fa fa-camera fa-3x" aria-hidden="true"></i>
                 <p>Click here to enable the webcam.</p>
-                <video id="video"></video></div>
+                <video id="video"></video>
+            </div>
             <div class="flex-item" style="background-image:url('https://hxlntblob.blob.core.windows.net/strikethispose/scoha1.jpg'); transform: scaleX(-1); background-size: cover;"></div>
             <div class="flex-caption">Use your face...</div>
             <div class="flex-caption">...to match this face!</div>
         </div>          
     </div>
     <div id="badge"> </div>
-    <div id="score"></div>
+    <div id="score"><p>Calculating...</p></div>
     <div class="buttoncontainer">
    <button id="snap">Snap photo</button>
    </div>
