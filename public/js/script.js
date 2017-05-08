@@ -70,7 +70,7 @@ $('body').on('click', '#snap', function () {
     let video = document.getElementById('video');
     let videow = $('#video').width();
     let videoh = $('#video').height();
-    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" id="placeholder" style="overflow:hidden; display:block; transform: scaleX(-1);"><canvas id="canvas" style="padding:0;"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
+    document.getElementById('videocontainer').innerHTML = '<div class="flex-item" style="overflow:hidden; display:block; transform: scaleX(-1);"><canvas id="canvas" style="padding:0;"></canvas></div><div class="flex-item" style="background-image:url(' + targetimgurl + '); background-size: cover;"></div> <div class="flex-caption">Use your face...</div><div class="flex-caption">...to match this face!</div>'
     var canvas = document.getElementById('canvas');
     var context = canvas.getContext('2d');
     canvas.height = $('.flex-item').height();
