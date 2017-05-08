@@ -77,8 +77,13 @@ $('body').on('click', '#snap', function () {
     canvas.width = $('.flex-item').width();
     //let woffset = 0;
     //if (videow > parseInt(canvas.width)) { woffset =  videow - parseInt(canvas.width) }
+    context.translate(canvas.width, 0);
+    context.scale(-1,1);
     context.drawImage(video, 0, 0, videow, videoh);
     incomingfaceurl = canvas.toDataURL("image/jpg", 0.8);
+    context.translate(canvas.width, 0);
+    context.scale(-1,1);
+    context.drawImage(video, 0, 0, videow, videoh);
     socket.emit('incomingface', incomingfaceurl);
     socket.emit('incomingemotion', incomingfaceurl);
     document.getElementById('score').innerHTML = '<p class="message">Calculating...</p>';
@@ -127,10 +132,10 @@ function getScore() {
     else if (rolldiff > 6 && rolldiff <= 9) { score = score + 1 }
     else if (rolldiff > 9 && rolldiff <= 15) { score = score + 0.5 }
     console.log(`rolldiff: ${rolldiff}. Score so far: ${score}`);
-    if (yawdiff <= 5) { score = score + 2 }
-    else if (yawdiff > 5 && yawdiff <= 10) { score = score + 1.5 }
-    else if (yawdiff > 10 && yawdiff <= 15) { score = score + 1 }
-    else if (yawdiff > 15 && yawdiff <= 20) { score = score + 0.5 }
+    if (yawdiff <= 3) { score = score + 2 }
+    else if (yawdiff > 3 && yawdiff <= 6) { score = score + 1.5 }
+    else if (yawdiff > 6 && yawdiff <= 9) { score = score + 1 }
+    else if (yawdiff > 9 && yawdiff <= 15) { score = score + 0.5 }
 console.log(`yawdiff: ${yawdiff}. Score so far: ${score}`);
     if (happinessdiff <= .05) { score = score + 2 }
     else if (happinessdiff > .05 && happinessdiff <= .1) {score = score + 1.5}
