@@ -1,5 +1,7 @@
 # `Strike(this.Pose)`
-`Strike(this.Pose)` is a web app that uses a webcam and [Microsoft Cognitive Services APIs](https://www.microsoft.com/cognitive-services) to test your ability to match a series of facial expressions.
+`Strike(this.Pose)` is a web app that uses a webcam and [Microsoft Cognitive Services APIs](https://www.microsoft.com/cognitive-services) to test your ability to match a series of facial expressions. Test it at [https://strikethispose.azurewebsites.net](https://strikethispose.azurewebsites.net). (Note: getUserMedia API is not compatible with Safari on OS X and iOS.)
+
+![Demo](pic.twitter.com/6NJESM2x8D)
 
 ## How it works
 This web application uses the `getUserMedia` API in the browser to capture a live video feed from a webcam. When the user clicks the "Snap photo" button, a still image from the video is written to a `<canvas>`. The image is then sent as a data URL to two Cognitive Services APIs: The [Face API](https://www.microsoft.com/cognitive-services/en-us/face-api) and the [Emotion API](https://www.microsoft.com/cognitive-services/en-us/emotion-api). The existing photo being matched against is sent to these APIs as well. Finally, selected results are compared and a score is calculated by way of a Very Complicated Algorithm*. There are a few other technologies working behind the scenes, including websockets and [Node.js](http://nodejs.org).
