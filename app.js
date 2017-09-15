@@ -5,7 +5,7 @@ var io = require('socket.io').listen(server);
 var port = process.env.port || 3002;
 var oxford = require('project-oxford');
 var client = new oxford.Client(process.env.facekey, 'westus');
-var emoclient = new oxford.Client(process.env.emokey);
+var emoclient = new oxford.Client(process.env.emokey, 'westus');
 
 
 var targetresultsreturned = 0;
