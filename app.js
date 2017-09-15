@@ -4,8 +4,10 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var port = process.env.port || 3002;
 var oxford = require('project-oxford');
-var client = new oxford.Client(process.env.facekey);
+var client = new oxford.Client(process.env.facekey, 'westus');
 var emoclient = new oxford.Client(process.env.emokey);
+
+
 var targetresultsreturned = 0;
 var incomingresultsreturned = 0;
 
